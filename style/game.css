@@ -1,0 +1,21 @@
+
+
+table.board {
+  font-size: 0;
+  line-height: 0;
+  outline: 1px solid #00F;
+}
+
+tr.board-row {
+  height: 20px;
+}
+
+td.board-cell {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+td.board-cell.isLiving {
+  background-color: #F00;
+}

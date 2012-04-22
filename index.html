@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <title>Backbone Lifegame</title>
+    <link rel="stylesheet" href="style/game.css" />
+  </head>
+  <body>
+    <div id="container"></div>
+
+    <script id="game-board-template" type="text/template">
+      {{#numCells}}
+      <table class="board">
+        <tbody>
+          {{#trs}}
+          <tr class="board-row">
+            {{#tds}}
+            <td class="board-cell {{#isLiving}}isLiving{{/isLiving}}" data-isLiving="{{isLiving}}" data-cid="{{cid}}">&nbsp;</td>
+            {{/tds}}
+          </tr>
+          {{/trs}}
+        </tbody>
+      </table>
+      {{/numCells}}
+    </script>
+
+    <script src="js/vendor/jquery-1.7.2.js"></script>
+    <script src="js/vendor/mustache.js"></script>
+    <script src="js/vendor/underscore.js"></script>
+    <script src="js/vendor/backbone.js"></script>
+    <script type="text/template" id="album-template">
+    </script>
+    <script src="js/Game.js"></script>
+    <script type="application/javascript">
+      $(function() {
+      	window.board = new GameBoard(
+       		{col: 6, row: 6}
+      	);
+      	window.app = new Game();
+      	window.player = new Player();
+      	Backbone.history.start();
+      	window.app.home();
+      });
+    </script>
+  </body>
+</html>
